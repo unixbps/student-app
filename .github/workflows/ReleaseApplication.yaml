@@ -61,7 +61,7 @@ jobs:
   #     jf_cli_key: ${{ secrets.JF_CLI_KEY }}
 
   build-and-push-ecr:
-    uses: unixbps/githubreusableworkflow_docker-publish/github/workflows/Docker.Build.Publish-ecr.yaml@main
+    uses: unixbps/githubreusableworkflow_docker-publish/.github/workflows/Docker.Build.Publish-ecr.yaml@main
     with:
       dockerfile_path: Dockerfile
       docker_source_path: student-api
