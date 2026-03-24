@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/unixbps/student-app/compare/v0.1.1...v0.1.2) (2026-03-24)
+
+
+### Bug Fixes
+
+* Corrected release please ([b7780bb](https://github.com/unixbps/student-app/commit/b7780bb74e08801074679dcf87f50581fc95484c))
+
 ## [0.1.1](https://github.com/unixbps/student-app/compare/v0.1.0...v0.1.1) (2026-03-24)
 
 
