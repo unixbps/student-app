@@ -8,12 +8,12 @@
       "component": "student-api",
       "changelog-path": "CHANGELOG.md",
       "extra-files": [
-        {
-          "type": "generic",
-          "path": "helm/**",
-          "glob": true
-        }
-      ]
+          {
+            "type": "generic",
+            "path": "helm/app/**",
+            "glob": true
+          }
+        ]
     }
   },
   "changelog-sections": [
