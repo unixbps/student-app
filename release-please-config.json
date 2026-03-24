@@ -10,7 +10,7 @@
       "extra-files": [
         {
           "type": "generic",
-          "path": "helm/app/**x",
+          "path": "helm/app/**",
           "glob": true
         },
         {
