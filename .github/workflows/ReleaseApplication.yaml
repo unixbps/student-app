@@ -1,0 +1,105 @@
+name: Release.Application
+on:
+  workflow_dispatch:
+    inputs:
+      manual_docker_tag:
+        required: true
+        description: Set manual version of docker tag
+        type: string
+  push:
+    branches:
+      - "main"
+defaults:
+  run:
+    shell: bash
+jobs:
+  release:
+    name: Release.Please
+    runs-on:
+      group: ${{ vars.RUNNER_SMALL_GROUP_NAME }}
+    outputs:
+      release_created: ${{ steps.release-please.outputs.release_created }}
+      docker_tag: ${{ steps.versions.outputs.docker_tag }}
+      major: ${{ steps.release-please.outputs.major }}
+      minor: ${{ steps.release-please.outputs.minor }}
+      patch: ${{ steps.release-please.outputs.patch }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: googleapis/release-please-action@v4
+        id: release-please
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+          token: ${{ secrets.PAT_TOKEN }}
+
+      - name: Set versions to output
+        id: versions
+        run: |
+          if ${{ github.event_name == 'workflow_dispatch' }}; then
+            echo "docker_tag=${{ inputs.manual_docker_tag }}" >> $GITHUB_OUTPUT
+          else
+            echo "docker_tag=$(jq '."."' .release-please-manifest.json)" >> "$GITHUB_OUTPUT"
+          fi
+
+  # build-and-publish-docker:
+  #   name: Docker.Build.Publish
+  #   needs:
+  #     - release
+  #   if: (needs.release.outputs.release_created == 'true') || ( github.event_name == 'workflow_dispatch')
+  #   uses: unixbps/githubreusableworkflow_docker-publish/.github/workflows/Docker.Build.Publish.yaml@main
+  #   with:
+  #     dockerfile_path: ./Dockerfile
+  #     run_docker_publish: true
+  #     image_name: studen-api
+  #     image_tag: ${{ needs.release.outputs.docker_tag }}
+  #     jf_username: ${{ vars.JF_USERNAME }}
+  #     publish_latest_tag: true
+  #     image_subdirectory: service/service-workshop-control
+  #     docker_build_args: NODE_OPTIONS=--max_old_space_size=7168
+  #   secrets:
+  #     jf_reference_token: ${{ secrets.JF_REFERENCE_TOKEN }}
+  #     jf_cli_key: ${{ secrets.JF_CLI_KEY }}
+
+  build-and-push-ecr:
+    uses: unixbps/githubreusableworkflow_docker-publish/github/workflows/Docker.Build.Publish-ecr.yaml@main
+    with:
+      dockerfile_path: Dockerfile
+      docker_source_path: student-api
+      image_name: student-api
+      aws_region: us-east-1
+      ecr_repository: ${{ vars.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/student-api
+      image_tag: ${{ github.sha }}
+    secrets:
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+  # trigger-deployment:
+  #   name: Trigger.Deployment
+  #   runs-on:
+  #     group: ${{ vars.RUNNER_SMALL_GROUP_NAME }}
+  #   needs:
+  #     - release
+  #     - build-and-publish-docker
+  #   if: (needs.release.outputs.release_created == 'true')
+  #   steps:
+  #     - name: Create or update tag
+  #       uses: create-new-directory-action@main
+  #       id: versioning
+  #       with:
+  #         semver: ${{ needs.release.outputs.major }}.${{ needs.release.outputs.minor }}.${{ needs.release.outputs.patch }}
+  #         create_patch_tag: false
+  #         create_major_tag: true
+  #         create_minor_tag: true
+  #     - uses: create-new-repo-short-tag.yaml@main
+  #       id: get-short-org-name
+  #       with:
+  #         full_repo_name: ${{ github.repository }}
+  #     - name: Repository Dispatch
+  #       uses: repository-dispatch-new-repo-action@main
+  #       with:
+  #         app_github_id: test
+  #         app_github_installation_id: test
+  #         app_github_private_key: test
+  #         repository: ${{ github.repository }}
+  #         event_type: artifacts-published
+  #         client_payload: '{ "ref": "v${{ needs.release.outputs.major }}.${{ needs.release.outputs.minor }}.${{ needs.release.outputs.patch }}" }'

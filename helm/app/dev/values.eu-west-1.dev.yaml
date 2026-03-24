@@ -1,0 +1,22 @@
+application:
+  config:
+    environment: dev
+    awsAccount:
+      region: eu-west-1
+      env: dev
+  deployment:
+    image:
+      tag: latest # x-release-please-version
+  ingressInternal:
+    annotationsOverrides:
+      wafArn: <your-internal-waf-arn>
+      groupName: student-api-internal
+  ingressPublic:
+    enabled: false
+    annotationsOverrides:
+      wafArn: <your-public-waf-arn>
+      groupName: student-api-public
+externalSecret:
+  awsSecretName: student-api-db-conn
+  k8sSecretName: student-api-db-secret
+  secretKey: POSTGRES_CONN_STR

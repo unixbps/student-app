@@ -1,0 +1,9 @@
+apiVersion: v2
+name: student-api
+version: 0.1.0
+description: A Helm chart for deploying the Student API on EKS
+appVersion: "1.0.0"
+dependencies:
+	- name: application
+		version: 3.9.1
+		repository: https://aws_account_id.dkr.ecr.region.amazonaws.com/helm-charts

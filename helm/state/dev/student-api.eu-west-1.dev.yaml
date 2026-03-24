@@ -1,0 +1,29 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: student-api-dev-euw1
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    team: team-elite
+    environment: dev
+    cluster: eks-cluster
+    region: eu-west-1
+    domain: service
+    subdomain: student-api
+spec:
+  destination:
+    name: eks-cu-eks-cluster
+    namespace: service-workshop-control-student-api
+  project: service-workshop-control-student-api
+  source:
+    path: ./helm/app
+    repoURL: https://github.com/unixbps/student-app
+    targetRevision: main
+    helm:
+      releaseName: student-api-dev-euw1
+      valueFiles:
+        - values.yaml
+        - dev/values.eu-west-1.dev.yaml
