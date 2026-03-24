@@ -15,8 +15,7 @@ defaults:
 jobs:
   release:
     name: Release.Please
-    runs-on:
-      group: ${{ vars.RUNNER_SMALL_GROUP_NAME }}
+    runs-on: ubuntu-latest
     outputs:
       release_created: ${{ steps.release-please.outputs.release_created }}
       docker_tag: ${{ steps.versions.outputs.docker_tag }}
@@ -69,14 +68,14 @@ jobs:
       aws_region: us-east-1
       ecr_repository: ${{ vars.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/student-api
       image_tag: ${{ github.sha }}
+      runner_group_name: ubuntu:latest
     secrets:
       aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
       aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
   # trigger-deployment:
   #   name: Trigger.Deployment
-  #   runs-on:
-  #     group: ${{ vars.RUNNER_SMALL_GROUP_NAME }}
+  #   runs-on: ubuntu-latest
   #   needs:
   #     - release
   #     - build-and-publish-docker
