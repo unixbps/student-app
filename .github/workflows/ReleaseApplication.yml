@@ -63,7 +63,7 @@ jobs:
     uses: unixbps/githubreusableworkflow_docker-publish/.github/workflows/Docker.Build.Publish-ecr.yaml@main
     with:
       dockerfile_path: Dockerfile
-      docker_source_path: student-api
+      docker_source_path: .
       image_name: student-api
       aws_region: us-east-1
       ecr_repository: ${{ vars.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/student-api
