@@ -8,12 +8,18 @@
       "component": "student-api",
       "changelog-path": "CHANGELOG.md",
       "extra-files": [
-          {
-            "type": "generic",
-            "path": "helm/app/**/**",
-            "glob": true
-          }
-        ]
+        {
+          "type": "generic",
+          "path": "helm/app/**x",
+          "glob": true
+        },
+        {
+          "type": "generic",
+          "path": "helm/app/dev/values.eu-west-1.dev.yaml",
+          "search": "image: .*",
+          "replace": "image: ghcr.io/org/repo:${version}"
+        }
+      ]
     }
   },
   "changelog-sections": [
