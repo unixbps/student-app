@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.1.3](https://github.com/unixbps/student-app/compare/v0.1.2...v0.1.3) (2026-03-24)
+
+
+### Bug Fixes
+
+* added folder pattern for helm values ([11464bb](https://github.com/unixbps/student-app/commit/11464bbce2273b0cce5dd4abc3cc8edaa9380f2d))
+* Corrected release please update ([9e5ed17](https://github.com/unixbps/student-app/commit/9e5ed1723256b7960b43fc0cabfbfa52aaf50be5))
+* Corrected the helm values file path ([8e87bf1](https://github.com/unixbps/student-app/commit/8e87bf1e3ba97666e41d2263ec2c43c8b2c691cf))
+* Corrected the image values ([ad043cf](https://github.com/unixbps/student-app/commit/ad043cfce5d1e418ff0f29b96f6e73230a7e2718))
+* Corrected the path ([ce962d6](https://github.com/unixbps/student-app/commit/ce962d676426e17232030e0f654f462c01ec6244))
+* Corrected the path ([4e20d67](https://github.com/unixbps/student-app/commit/4e20d67cd3306e62fe03e7734be289804789b824))
+* Corrected the path ([4b97d51](https://github.com/unixbps/student-app/commit/4b97d51e887acf945d565ad25dae743a927b3676))
+
 ## [0.1.2](https://github.com/unixbps/student-app/compare/v0.1.1...v0.1.2) (2026-03-24)
 
 
