@@ -12,11 +12,6 @@
           "type": "generic",
           "path": "helm/app/**",
           "glob": true
-        },
-        {
-          "type": "generic",
-          "path": "helm/app/dev/values.eu-west-1.dev.yaml",
-          "glob": true
         }
       ]
     }

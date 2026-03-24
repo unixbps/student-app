@@ -26,4 +26,4 @@ spec:
       releaseName: student-api-dev-euw1
       valueFiles:
         - values.yaml
-        - dev/values.eu-west-1.dev.yaml
+        - values.eu-west-1.dev.yaml
