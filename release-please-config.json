@@ -16,8 +16,7 @@
         {
           "type": "generic",
           "path": "helm/app/dev/values.eu-west-1.dev.yaml",
-          "search": "image: .*",
-          "replace": "image: ghcr.io/org/repo:${version}"
+          "glob": true
         }
       ]
     }
