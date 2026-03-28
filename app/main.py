@@ -25,6 +25,7 @@ def get_students():
     rows = cur.fetchall()
     cur.close()
     conn.close()
+    print("Demo app")
     return [Student(id=row[0], name=row[1], age=row[2], email=row[3]) for row in rows]
 
 @app.post("/students", response_model=Student)
