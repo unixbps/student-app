@@ -23,7 +23,7 @@ def get_students():
     cur = conn.cursor()
     cur.execute("SELECT id, name, age, email FROM students")
     rows = cur.fetchall()
-    cur.close()
+    cur.close("Test api")
     conn.close()
     return [Student(id=row[0], name=row[1], age=row[2], email=row[3]) for row in rows]
 
