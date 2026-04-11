@@ -1,32 +1,24 @@
-image:
-  repository: student-api
-  tag: latest
-  pullPolicy: IfNotPresent
-
-replicaCount: 2
-
-autoscaling:
-  enabled: true
-  minReplicas: 2
-  maxReplicas: 5
-  targetCPUUtilizationPercentage: 80
-
-service:
-  type: ClusterIP
-  port: 8000
-
-ingress:
-  enabled: true
-  className: "nginx"
-  hosts:
-    - host: student-api.local
-      paths:
-        - path: /
-          pathType: Prefix
-  tls: []
-
-externalSecret:
-  enabled: true
-  awsSecretName: student-api-db-conn
-  k8sSecretName: student-api-db-secret
-  secretKey: POSTGRES_CONN_STR
+---
+application:
+  config:
+    clusterType: in-cluster
+    applicationName: student-api
+    name: svc-workshop-i
+    domainName: service
+    subDomainName: student
+    applicationId: student-api
+    team: DevOps
+    repoURL: https://github.com/unixbps/student-app
+  deployment:
+    imagePullSecrets: ecr-pull-secret
+    image:
+      baseUrl: 252689085451.dkr.ecr.us-east-1.amazonaws.com
+      name: student-api
+      registryName: student-api
+  ingressPublic:
+    enabled: true
+    hosts:
+      - host: ""
+        paths:
+          - path: /student-api
+            pathType: Prefix
