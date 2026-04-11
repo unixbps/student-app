@@ -10,14 +10,8 @@
       "extra-files": [
         {
           "type": "generic",
-          "path": "helm/app/**",
+          "path": "helm/app/student-api/**",
           "glob": true
-        },
-        {
-          "type": "generic",
-          "path": "helm/app/dev/values.eu-west-1.dev.yaml",
-          "search": "image: .*",
-          "replace": "image: ghcr.io/org/repo:${version}"
         }
       ]
     }
