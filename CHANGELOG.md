@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.5](https://github.com/unixbps/student-app/compare/v0.1.4...v0.1.5) (2026-04-11)
+
+
+### Bug Fixes
+
+* Corrected registry details ([c6cd395](https://github.com/unixbps/student-app/commit/c6cd395120126c567cbb3f173036e96e617d05b1))
+* Corrected registry details ([94836f3](https://github.com/unixbps/student-app/commit/94836f3d015de746262bc1c405580ac3fad2ae7d))
+
 ## [0.1.4](https://github.com/unixbps/student-app/compare/v0.1.3...v0.1.4) (2026-04-11)
 
 
