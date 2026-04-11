@@ -20,7 +20,7 @@ spec:
   project: service-student-api
   source:
     path: ./helm/app/student-api
-    repoURL: https://github.com/keyloop-platform/service_workshop-control_servicehub-360-bff
+    repoURL: https://github.com/unixbps/student-app
     targetRevision: main
     helm:
       releaseName: svc-student-api-dev-euw1
