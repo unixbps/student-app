@@ -60,6 +60,10 @@ jobs:
   #     jf_cli_key: ${{ secrets.JF_CLI_KEY }}
 
   build-and-push-ecr:
+    name: Docker.Build.Publish
+    needs:
+      - release
+    if: (needs.release.outputs.release_created == 'true') || ( github.event_name == 'workflow_dispatch')
     uses: unixbps/githubreusableworkflow_docker-publish/.github/workflows/Docker.Build.Publish-ecr.yaml@main
     with:
       dockerfile_path: Dockerfile
