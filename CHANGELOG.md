@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.6](https://github.com/unixbps/student-app/compare/v0.1.5...v0.1.6) (2026-04-11)
+
+
+### Bug Fixes
+
+* Adjusted the path ([15b91f8](https://github.com/unixbps/student-app/commit/15b91f88fe5dcb6bd843723491a772d3ac920360))
+* Adjusted the path ([e2c9960](https://github.com/unixbps/student-app/commit/e2c99606a943e50d6345fb55dd25f010a58b489b))
+* corrected the path ([92fe92a](https://github.com/unixbps/student-app/commit/92fe92af7b4e4c336a774116fc9683e759ef11bc))
+
 ## [0.1.5](https://github.com/unixbps/student-app/compare/v0.1.4...v0.1.5) (2026-04-11)
 
 
