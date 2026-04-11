@@ -19,7 +19,7 @@ spec:
     namespace: service-workshop-control-student-api
   project: service-student-api
   source:
-    path: ./helm/app
+    path: ./helm/app/student-api
     repoURL: https://github.com/keyloop-platform/service_workshop-control_servicehub-360-bff
     targetRevision: main
     helm:
