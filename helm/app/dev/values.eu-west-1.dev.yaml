@@ -7,16 +7,3 @@ application:
   deployment:
     image:
       tag: 0.1.3 # x-release-please-version
-  ingressInternal:
-    annotationsOverrides:
-      wafArn: <your-internal-waf-arn>
-      groupName: student-api-internal
-  ingressPublic:
-    enabled: false
-    annotationsOverrides:
-      wafArn: <your-public-waf-arn>
-      groupName: student-api-public
-externalSecret:
-  awsSecretName: student-api-db-conn
-  k8sSecretName: student-api-db-secret
-  secretKey: POSTGRES_CONN_STR

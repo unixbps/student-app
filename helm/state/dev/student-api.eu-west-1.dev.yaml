@@ -2,28 +2,28 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: student-api-dev-euw1
+  name: svc-student-api-dev-euw1
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   labels:
-    team: team-elite
+    team: DevOps
     environment: dev
-    cluster: eks-cluster
+    cluster: in-cluster
     region: eu-west-1
     domain: service
-    subdomain: student-api
+    subdomain: student
 spec:
   destination:
-    name: eks-cu-eks-cluster
+    name: in-cluster
     namespace: service-workshop-control-student-api
-  project: service-workshop-control-student-api
+  project: service-student-api
   source:
     path: ./helm/app
-    repoURL: https://github.com/unixbps/student-app
+    repoURL: https://github.com/keyloop-platform/service_workshop-control_servicehub-360-bff
     targetRevision: main
     helm:
-      releaseName: student-api-dev-euw1
+      releaseName: svc-student-api-dev-euw1
       valueFiles:
         - values.yaml
         - dev/values.eu-west-1.dev.yaml
