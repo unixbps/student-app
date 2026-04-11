@@ -1,9 +1,9 @@
 apiVersion: v2
 name: student-api
-version: 0.1.6	# x-release-please-version
+version: 0.1.5 # x-release-please-version
 description: A Helm chart for deploying the Student API on EKS
-appVersion: "0.1.6"	# x-release-please-version
+appVersion: "0.1.5" # x-release-please-version
 dependencies:
-	- name: application
-		version: 1.0.15
-	  repository: oci://252689085451.dkr.ecr.eu-west-1.amazonaws.com/application
+  - name: application
+    version: 1.0.15
+    repository: oci://252689085451.dkr.ecr.eu-west-1.amazonaws.com/application
