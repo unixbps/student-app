@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.12](https://github.com/unixbps/student-app/compare/v0.1.11...v0.1.12) (2026-04-12)
+
+
+### Bug Fixes
+
+* corrected chart version ([596f51a](https://github.com/unixbps/student-app/commit/596f51af8b5660f01ec98ab4860f20fa10badf49))
+* corrected chart version ([e56c4cb](https://github.com/unixbps/student-app/commit/e56c4cb887ad0519968d1b8b26eed84091a890bb))
+* Corrected the values file ([957ba40](https://github.com/unixbps/student-app/commit/957ba401fd6c72bcdcd9568494523d87dd6be522))
+* Corrected the values file ([2d26b87](https://github.com/unixbps/student-app/commit/2d26b873c95f23b79d00126b7596955f33880aa9))
+
 ## [0.1.11](https://github.com/unixbps/student-app/compare/v0.1.10...v0.1.11) (2026-04-12)
 
 
