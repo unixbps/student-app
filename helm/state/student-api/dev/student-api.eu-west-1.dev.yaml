@@ -17,7 +17,7 @@ spec:
   destination:
     name: in-cluster
     namespace: service-workshop-control-student-api
-  project: service-student-api
+  project: student
   source:
     path: ./helm/app/student-api
     repoURL: https://github.com/unixbps/student-app

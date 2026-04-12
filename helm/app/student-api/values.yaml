@@ -12,7 +12,7 @@ application:
   deployment:
     imagePullSecrets: ecr-pull-secret
     image:
-      baseUrl: 252689085451.dkr.ecr.us-east-1.amazonaws.com
+      baseUrl: 308488080037.dkr.ecr.us-east-1.amazonaws.com
       name: student-api
       registryName: student-api
   ingressPublic:
