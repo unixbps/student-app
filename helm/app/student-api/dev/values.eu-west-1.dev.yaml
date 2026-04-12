@@ -4,6 +4,9 @@ application:
     awsAccount:
       region: eu-west-1
       env: dev
+  # image.tag used by deployment template (.Values.image.tag)
+  image:
+    tag: 0.1.10 # x-release-please-version
   deployment:
     image:
-      tag: 0.1.11 # x-release-please-version
+      tag: 0.1.10 # x-release-please-version

@@ -3,18 +3,48 @@ application:
   config:
     clusterType: in-cluster
     applicationName: student-api
-    name: svc-workshop-i
     domainName: service
     subDomainName: student
     applicationId: student-api
     team: DevOps
+    email: prudvee143@gmail.com
     repoURL: https://github.com/unixbps/student-app
+  # image.repository is used directly by the deployment template
+  # format: <ecr-registry>/<repository-name>
+  image:
+    repository: 308488080037.dkr.ecr.us-east-1.amazonaws.com/student-api
   deployment:
     imagePullSecrets: ecr-pull-secret
     image:
       baseUrl: 308488080037.dkr.ecr.us-east-1.amazonaws.com
       name: student-api
       registryName: student-api
+    # FastAPI runs on port 8000 — deployment containerPort is driven by service.ports[0].port
+    startupProbe:
+      enabled: true
+      httpGet:
+        path: /health
+        port: http
+    livenessProbe:
+      enabled: true
+      httpGet:
+        path: /health
+        port: http
+    readinessProbe:
+      enabled: true
+      httpGet:
+        path: /health
+        port: http
+  service:
+    ports:
+      - port: 8000
+        name: http
+        protocol: TCP
+        targetPort: http
+  externalSecrets:
+    enabled: false
+  ingressInternal:
+    enabled: false
   ingressPublic:
     enabled: true
     hosts:
@@ -22,3 +52,13 @@ application:
         paths:
           - path: /student-api
             pathType: Prefix
+  # ingressPublic:
+  #   enabled: true
+  #   annotationsOverrides:
+  #     groupName: shared-public-alb   # ← must match existing ALB group name exactly
+  #   hosts:
+  #     - host: ""
+  #       paths:
+  #         - path: /student-api
+  #           pathType: Prefix
+
