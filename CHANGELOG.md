@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.10](https://github.com/unixbps/student-app/compare/v0.1.9...v0.1.10) (2026-04-12)
+
+
+### Bug Fixes
+
+* Update application dependency version to 1.0.16 ([8135664](https://github.com/unixbps/student-app/commit/8135664eb6b4fb1d74da0adb684637b4dbf1bb3b))
+* Update application dependency version to 1.0.16 ([7ad5652](https://github.com/unixbps/student-app/commit/7ad5652df230d1e68f5f0465650c33a65a239f40))
+
 ## [0.1.9](https://github.com/unixbps/student-app/compare/v0.1.8...v0.1.9) (2026-04-12)
 
 
