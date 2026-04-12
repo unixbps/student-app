@@ -6,4 +6,4 @@ application:
       env: dev
   deployment:
     image:
-      tag: 0.1.8 # x-release-please-version
+      tag: 0.1.9 # x-release-please-version
