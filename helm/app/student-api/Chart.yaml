@@ -6,4 +6,4 @@ appVersion: "0.1.10" # x-release-please-version
 dependencies:
   - name: application
     version: 1.0.16
-    repository: oci://252689085451.dkr.ecr.eu-west-1.amazonaws.com/application
+    repository: oci://308488080037.dkr.ecr.us-east-1.amazonaws.com/application
