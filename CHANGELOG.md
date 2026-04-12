@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.11](https://github.com/unixbps/student-app/compare/v0.1.10...v0.1.11) (2026-04-12)
+
+
+### Bug Fixes
+
+* Corrected chart details ([168c884](https://github.com/unixbps/student-app/commit/168c8848050899e612dc1ea92a218abe2399ed71))
+* Corrected helm chart ([303735b](https://github.com/unixbps/student-app/commit/303735b820b940af993890fe7e4b266b4bf2d44f))
+* corrected project ([d668fd4](https://github.com/unixbps/student-app/commit/d668fd446a1c7e0e9ec2e099dda470e27a5091df))
+* Image repository ([a7ab30f](https://github.com/unixbps/student-app/commit/a7ab30f51d83d05a802638bb826188381617bd94))
+
 ## [0.1.10](https://github.com/unixbps/student-app/compare/v0.1.9...v0.1.10) (2026-04-12)
 
 
