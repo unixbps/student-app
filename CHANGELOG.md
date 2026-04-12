@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.9](https://github.com/unixbps/student-app/compare/v0.1.8...v0.1.9) (2026-04-12)
+
+
+### Bug Fixes
+
+* Realease-test ([8c35d49](https://github.com/unixbps/student-app/commit/8c35d4965430f3ce85174a5475cdc2bfd289f1b8))
+* Realease-test ([e207d9e](https://github.com/unixbps/student-app/commit/e207d9ed7681b324e06bc52830ce9783eceb4991))
+
 ## [0.1.8](https://github.com/unixbps/student-app/compare/v0.1.7...v0.1.8) (2026-04-11)
 
 
