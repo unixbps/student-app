@@ -12,11 +12,11 @@ application:
   # image.repository is used directly by the deployment template
   # format: <ecr-registry>/<repository-name>
   image:
-    repository: 308488080037.dkr.ecr.us-east-1.amazonaws.com/student-api
+    repository: 843976229254.dkr.ecr.us-east-1.amazonaws.com/student-api
   deployment:
     imagePullSecrets: ecr-pull-secret
     image:
-      baseUrl: 308488080037.dkr.ecr.us-east-1.amazonaws.com
+      baseUrl: 843976229254.dkr.ecr.us-east-1.amazonaws.com
       name: student-api
       registryName: student-api
     # FastAPI runs on port 8000 — deployment containerPort is driven by service.ports[0].port
