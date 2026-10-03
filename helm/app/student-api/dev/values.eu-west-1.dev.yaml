@@ -6,10 +6,10 @@ application:
       env: dev
   # image.tag used by deployment template (.Values.image.tag)
   image:
-    tag: 0.1.18 # x-release-please-version
+    tag: 0.1.19 # x-release-please-version
   deployment:
     image:
-      tag: 0.1.18 # x-release-please-version
+      tag: 0.1.19 # x-release-please-version
   ingressPublic:
     annotations:
       alb.ingress.kubernetes.io/healthcheck-path: /health
