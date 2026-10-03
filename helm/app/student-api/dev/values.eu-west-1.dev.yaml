@@ -10,3 +10,6 @@ application:
   deployment:
     image:
       tag: 0.1.18 # x-release-please-version
+  ingressPublic:
+    annotations:
+      alb.ingress.kubernetes.io/healthcheck-path: /health
