@@ -5,5 +5,5 @@ description: A Helm chart for deploying the Student API on EKS
 appVersion: "0.1.17" # x-release-please-version
 dependencies:
   - name: application
-    version: 1.0.20
-    repository: oci://308488080037.dkr.ecr.us-east-1.amazonaws.com
+    version: 1.0.22
+    repository: oci://843976229254.dkr.ecr.us-east-1.amazonaws.com
