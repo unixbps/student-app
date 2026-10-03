@@ -6,7 +6,7 @@ application:
       env: dev
   # image.tag used by deployment template (.Values.image.tag)
   image:
-    tag: 0.1.17 # x-release-please-version
+    tag: 0.1.18 # x-release-please-version
   deployment:
     image:
-      tag: 0.1.17 # x-release-please-version
+      tag: 0.1.18 # x-release-please-version
